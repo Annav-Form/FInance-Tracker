@@ -1,0 +1,134 @@
+.add-transaction-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+.add-transaction-card { padding: 32px; }
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Type Toggle */
+.type-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: var(--bg-secondary);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.type-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  user-select: none;
+}
+
+.type-option:hover { color: var(--text-primary); }
+
+.type-option.expense.active {
+  background: var(--accent-red-dim);
+  color: var(--accent-red);
+  border: 1px solid rgba(255,77,109,0.25);
+}
+
+.type-option.income.active {
+  background: var(--accent-green-dim);
+  color: var(--accent-green);
+  border: 1px solid rgba(0,229,160,0.25);
+}
+
+/* Recurring checkbox */
+.recurring-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.recurring-check input[type="checkbox"] { display: none; }
+
+.check-custom {
+  width: 18px; height: 18px;
+  border: 2px solid var(--border-light);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition);
+  background: var(--bg-secondary);
+}
+
+.recurring-check input:checked ~ .check-custom {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+.recurring-check input:checked ~ .check-custom::after {
+  content: '✓';
+  color: #0a0a0f;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+/* Tips */
+.add-transaction-tips { padding: 24px; }
+
+.tips-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+}
+
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tips-list li {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+
+.tips-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+}
+
+.tips-list strong { color: var(--text-primary); }
+.tips-list em { color: var(--accent-amber); font-style: normal; }
+
+@media (max-width: 900px) {
+  .add-transaction-layout { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}

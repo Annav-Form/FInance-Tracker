@@ -1,0 +1,93 @@
+.card-header-an { margin-bottom: 20px; }
+
+.currency-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.currency-icon { font-size: 1.2rem; }
+
+/* Recurring grid */
+.recurring-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.recurring-item {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+
+.recurring-item.income { border-color: rgba(0,229,160,0.2); background: rgba(0,229,160,0.04); }
+.recurring-item.expense { border-color: rgba(255,77,109,0.2); background: rgba(255,77,109,0.04); }
+
+.recurring-name { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.recurring-cat { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 8px; }
+
+.recurring-amt { font-family: var(--font-display); font-size: 1rem; font-weight: 700; }
+.recurring-amt.income { color: var(--accent-green); }
+.recurring-amt.expense { color: var(--accent-red); }
+
+/* Table */
+.analytics-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.analytics-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.analytics-table td {
+  padding: 12px 12px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.analytics-table tr:last-child td { border-bottom: none; }
+.analytics-table tbody tr:hover td { background: var(--bg-secondary); }
+
+.cat-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.table-pct-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-pct-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.table-pct-fill {
+  height: 100%;
+  border-radius: 100px;
+  opacity: 0.8;
+  transition: width 0.8s ease;
+}
+
+.table-pct-row span { font-size: 0.82rem; color: var(--text-muted); min-width: 38px; }

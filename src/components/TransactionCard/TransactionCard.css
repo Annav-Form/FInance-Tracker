@@ -1,0 +1,117 @@
+.transaction-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.transaction-card:hover {
+  border-color: var(--border-light);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.tc-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  gap: 12px;
+}
+
+.tc-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.tc-type-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.tc-type-dot.income { background: var(--accent-green); box-shadow: 0 0 6px rgba(0,229,160,0.5); }
+.tc-type-dot.expense { background: var(--accent-red); box-shadow: 0 0 6px rgba(255,77,109,0.5); }
+
+.tc-info { min-width: 0; flex: 1; }
+
+.tc-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.recurring-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+  background: var(--accent-purple-dim);
+  padding: 1px 8px;
+  border-radius: 100px;
+}
+
+.tc-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.tc-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.tc-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tc-amount {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.tc-amount.income { color: var(--accent-green); }
+.tc-amount.expense { color: var(--accent-red); }
+
+.tc-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.transaction-card:hover .tc-actions { opacity: 1; }
+
+.btn.danger:hover { color: var(--accent-red); background: var(--accent-red-dim); }
+
+.tc-notes {
+  padding: 10px 16px 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.tc-notes-label { color: var(--text-muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 4px; }
+
+@media (max-width: 600px) {
+  .tc-actions { opacity: 1; }
+  .tc-amount { font-size: 0.9rem; }
+}

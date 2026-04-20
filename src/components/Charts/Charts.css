@@ -1,0 +1,25 @@
+.chart-tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.chart-tooltip-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.chart-tooltip-item {
+  font-size: 0.88rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.chart-tooltip-item span { color: var(--text-secondary); }
